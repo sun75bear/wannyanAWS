@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title> 🐶🐱 犬猫投票場！Show Your Colors!</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="犬派か猫派か、ユーザーに選んでもらう">
+<link rel="stylesheet" href="css/mainpage/style.css">
+</head>
+
+<body class="home">
+
+<div id="container">
+
+<header>
+<h1 id="logo"><a href="index.html"><img src="img/mainpage/logo_wannyan_r2.png" alt="sample_pet_shopの手書き文字"></a></h1>
+<!--スライドショー-->
+<aside>
+<div class="slide1">slide1</div>
+<div class="slide2">slide2</div>
+<div class="slide3">slide3</div>
+</aside>
+<nav class="category-menu">
+<ul>
+<li><a href="login.jsp"><span class="line1"><span>犬猫投票場へ移動</span>をする</span><span class="line2">Show Your Colors !!</span></a></li>
+<li><a href="sdrun_all.jsp"><span class="line1"><span>投票結果へ移動</span>をする</span><span class="line2">Show Your Colors !!</span></a></li>
+
+</ul>
+</nav>
+</header>
+
+<div id="contents">
+<main>
+<section>
+
+<h2 class="dn">フォトギャラリー、余裕があれば選ばれたimgを垂れ流す</h2>
+
+<div class="thumbnail-slide">
+
+<img src="img/mainpage/1.jpg" alt="">
+<img src="img/mainpage/2.jpg" alt="">
+<img src="img/mainpage/3.jpg" alt="">
+<img src="img/mainpage/header01.jpg" alt="">
+<img src="img/mainpage/neko06.jpg" alt="">
+<img src="img/mainpage/inu06.jpg" alt="">
+
+</div>
+<!--/.thumbnail-slide-->
+
+</section>
+    
+    <section>
+<article class="arena-entry-section">
+        <div class="entry-box">
+            <a href="login.jsp" class="entry-link" title="一人一票投票できます！">
+                犬猫投票場へ出発！
+            </a>
+        </div>
+ </article>
+</section>
+<section>
+    <h2 class="center">投票結果ぷれびゅー</h2>
+    <div style="text-align: center; padding: 20px;">
+        <iframe 
+            src="/sdrun_inframe.jsp" 
+            width="640" 
+            height="480" 
+            frameborder="0" 
+            style="border: none ; border-radius: 5px;"
+            scrolling="no">
+        </iframe>
+    </div>
+</section>
+    
+</main>
+
+</div>
+<!--/#contents-->
+
+<!--ページの上部へ戻るボタン-->
+<div class="pagetop"><a href="#"><i class="fas fa-angle-double-up"></i></a></div>
+
+<div id="footer-contents">
+
+<div class="left">
+
+	<h4 id="footer-logo"><img src="img/mainpage/logo_find_us.png" alt="SAMPLE PET SHOP"></h4>
+	<p>〒730-0825 広島県広島市中区光南５丁目２－６５<br>
+	電話：ググってね<br>
+	営業時間：たぶん07:45開門〜きっと19:00閉門<br>
+	定休日：完全週休二日</p>
+</div>
+<!--/.left-->
+
+<div class="right">
+
+	<h4>アクセス</h4>
+	<div class="iframe-box">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3293.466159680491!2d132.4424685761874!3d34.36406220120045!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355aa3b184471add%3A0xff211cef3fc679d7!2z44Od44Oq44OG44Kv44K744Oz44K_44O8IOW6g-Wztg!5e0!3m2!1sja!2sjp!4v1761274974053!5m2!1sja!2sjp" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+</div>
+<!--/.right-->
+
+</div>
+<!--/#footermenu-->
+
+<footer>
+<small>Copyright&copy; <a href="index.html">全部著作権フリーだよ</a> All Rights Reserved.</small>
+<span class="pr"><a href="https://template-party.com/" target="_blank">《Web Design:Template-Party》</a></span>
+</footer>
+
+</div>
+<!--/#container-->
+
+<!--開閉ブロック-->
+<div id="menubar">
+
+<nav>
+<ul>
+<li><a href="index.html">ホーム</a></li>
+<li><a href="login.jsp">犬猫投票場へ移動する</a></li>
+<li><a href="sdrun_all.jsp">投票結果へ移動する</a></li>
+</ul>
+</nav>
+
+<nav class="category-menu">
+<ul>
+<li><a href="login.jsp""><span class="line1"><span>犬猫投票場へ移動</span></span><span class="line2">Show Your Colors!!.</span></a></li>
+<li><a href="sdrun_all.jsp"><span class="line1"><span>投票結果へ移動</span></span><span class="line2">Show Your Colors !!</span></a></li>
+</ul>
+</nav>
+
+</div>
+<!--/#menubar-->
+
+<!--開閉ボタン（ハンバーガーアイコン）-->
+<div id="menubar_hdr">
+<span></span><span></span><span></span>
+</div>
+
+<!--jQueryの読み込み-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<!--スライドショー（slick）-->
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script src="js/mainpage/slick-thumbnail.js"></script>
+
+<!--このテンプレート専用のスクリプト-->
+<script src="js/mainpage/main.js"></script>
+
+</body>
+</html>

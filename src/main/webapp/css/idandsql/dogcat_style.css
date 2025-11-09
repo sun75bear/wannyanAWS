@@ -1,0 +1,158 @@
+/* dogcat_style.css */
+
+/* ---------------------------------- */
+/* 共通スタイル (login_style.cssから流用) */
+/* ---------------------------------- */
+body {
+    /* フォントを適用 (JSP側でGoogle Fontsを読み込む必要があります) */
+    font-family: 'Mochiy Pop P One', sans-serif;
+    
+    /* 背景を設定 (ログインページと共通または類似の画像を使用) */
+    background-image: url('../../img/idandsql/logincatdogfoot.jpg'); 
+    /* ★修正 1: cover から contain に変更し、画像全体を表示させる ★ */
+    background-size: contain;    
+    /* ★追加: contain にすると画像が繰り返されるのを防ぐ ★ */
+    background-repeat: no-repeat;
+    
+    background-position: center;
+    background-attachment: fixed;
+    
+    /* 画面全体に広げる */
+    margin: 0;
+    min-height: 100vh;
+    
+    /* コンテンツを中央に配置するためのFlexbox設定 */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 水平方向の中央 */
+    padding-top: 20px; /* 画面上部に少しスペースを確保 */
+}
+
+/* メインコンテンツコンテナ（フォームと表を囲む） */
+.main-content-container {
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明の白背景 */
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 80%; /* ログインより広めに */
+    max-width: 1000px;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+h2, h3 {
+    color: #6a5acd; /* 紫系 */
+    border-bottom: 2px solid #ff69b4; /* ホットピンクの下線 */
+    padding-bottom: 5px;
+    margin-top: 0;
+}
+
+/* ---------------------------------- */
+/* 投票フォームのスタイル             */
+/* ---------------------------------- */
+form {
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px dashed #ff69b4; /* ダッシュ線で区切る */
+    border-radius: 10px;
+    display: inline-block; /* 内容に合わせて幅を調整 */
+    text-align: left; /* フォーム内の要素を左寄せに戻す */
+}
+
+/* フォームの各行のスタイル */
+form br {
+    display: none; /* <br>を非表示にし、Flexで制御する */
+}
+
+form > * {
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* SelectとInput要素の共通スタイル */
+select, input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+    min-width: 250px; /* ある程度の幅を確保 */
+    margin-left: 5px;
+}
+
+/* 登録ボタンのスタイル (loginページと共通) */
+input[type="submit"] {
+    background-color: #ff69b4;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+    display: block; /* 独立したブロックにする */
+}
+
+input[type="submit"]:hover {
+    background-color: #ff1493;
+}
+
+
+/* ---------------------------------- */
+/* 投票結果テーブルのスタイル         */
+/* ---------------------------------- */
+table {
+    width: 100%;
+    border-collapse: collapse; /* セルの境界線を一つにする */
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* ヘッダー行 */
+table th {
+    background-color: #6a5acd; /* 紫系 */
+    color: white;
+    padding: 12px 8px;
+    border: 1px solid #5a4bbf;
+}
+
+/* データ行 */
+table td {
+    background-color: #f7f7ff; /* 薄い背景色 */
+    padding: 10px 8px;
+    border: 1px solid #ccc;
+    vertical-align: middle;
+}
+
+/* 偶数行の背景色 */
+table tr:nth-child(even) td {
+    background-color: #e8e8ff; /* より濃い薄紫色 */
+}
+
+/* アクション列（削除ボタン） */
+.action-cell {
+    width: 80px;
+    text-align: center;
+}
+
+.action-cell form {
+    margin: 0;
+    padding: 0;
+    border: none;
+    display: inline-block;
+}
+
+/* 削除ボタンのスタイル */
+.action-cell input[type="submit"] {
+    background-color: #ff4500; /* オレンジレッド */
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 0;
+}
+
+.action-cell input[type="submit"]:hover {
+    background-color: #cc3700;
+}

@@ -1,0 +1,96 @@
+/* login_style.css */
+
+/* ---------------------------------- */
+/* 全体デザインと中央配置             */
+/* ---------------------------------- */
+body {
+    /* フォントを適用 */
+    font-family: 'Mochiy Pop P One', sans-serif;
+    /* 背景を設定 */
+    background-image: url('../../img/idandsql/logincatdogfoot.jpg'); /* ★CSSファイルからの相対パスに修正が必要な場合があります */
+/* ★修正 1: cover から contain に変更し、画像全体を表示させる ★ */
+    background-size: contain;    
+    /* ★追加: contain にすると画像が繰り返されるのを防ぐ ★ */
+    background-repeat: no-repeat;
+    
+    background-position: center;
+    background-attachment: fixed; /* 背景を固定 */
+    
+    /* 画面全体に広げる */
+    margin: 0;
+    min-height: 100vh; 
+    
+    /* フォームを中央に配置するために親要素としてFlexbox設定 */
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    justify-content: center; /* 垂直方向の中央 */
+    align-items: center; /* 水平方向の中央 */
+}
+
+/* フォームコンテナのスタイル */
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明の白背景 */
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    width: 500px;
+    text-align: center;
+}
+
+/* フォーム内の p タグ（ID/PASSの行）のスタイルを追加 */
+.login-container form p {
+    display: flex; /* Flexboxを有効化 */
+    justify-content: center; /* 要素を水平方向の中央に配置 */
+    align-items: center; /* 要素を垂直方向の中央に配置 */
+    gap: 10px; /* labelとinputの間の隙間 */
+}
+
+/* ラベルのスタイルを追加（入力欄を揃えるため） */
+.login-container form p label {
+    width: 60px; 
+    text-align: right;
+    font-weight: bold;
+}
+
+/* フォーム内の要素のスタイル */
+.login-container h2 {
+    color: #6a5acd; /* 紫系 */
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+/* 入力欄のスタイル */
+input[type="text"], input[type="password"] {
+    width: 200px;
+    padding: 10px;
+    margin-bottom: 0px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box; /* paddingを含めて幅を計算 */
+}
+
+/* 送信ボタンのスタイル */
+input[type="submit"] {
+    background-color: #ff69b4; /* ホットピンク */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff1493; /* 濃いピンク */
+}
+
+/* エラーメッセージ */
+.error-message {
+    color: #ff4500; /* オレンジレッド */
+    font-weight: bold;
+    margin-top: 15px;
+}

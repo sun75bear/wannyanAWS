@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+
+
+/*トップページのスライドショーのキーフレーム設定
+---------------------------------------------------------------------------*/
+@keyframes slide1 {
+	0% {opacity: 1;}
+	25%{opacity: 1;}
+	35%{opacity: 0;}
+	90% {opacity: 0;}
+	100% {opacity: 1;}
+}
+@keyframes slide2 {
+	0% {opacity: 0;}
+	25% {opacity: 0;}
+	35% {opacity: 1;}
+	60% {opacity: 1;}
+	70% {opacity: 0;}
+	100% {opacity: 0;}
+}
+@keyframes slide3 {
+	0% {opacity: 0;}
+	60% {opacity: 0;}
+	70% {opacity: 1;}
+	90% {opacity: 1;}
+	100% {opacity: 0;}
+}
+
+
+/*スライドショー（cssでのbackground使用）
+ここでは、5:3の画像比率（3÷5=0.6）を読み込む指定を行なっています。
+異なる画像比率にしたい場合、.mainimgのpadding-topの数字を変更します。2:1にするなら50%です。
+---------------------------------------------------------------------------*/
+/*3枚の画像を囲むブロック*/
+.home header {
+	width: 100%;
+	height: 0;
+	padding-top: 60%;	/*アスペクト比を調整するところです*/
+	position: relative;
+	overflow: hidden;
+}
+
+/*３枚の画像の共通設定*/
+.home header .slide1, .home header .slide2, .home header .slide3 {
+	width: 100%;height: 100%;
+	position: absolute;right: 0px;top: 0px;z-index: -1;
+	text-indent: -9999px;
+}
+
+/*１枚目画像*/
+.home header .slide1 {
+	animation: slide1 15s linear infinite, opa1 1s linear;	/*「15s（※15秒）」というのがスライドショー全体にかける時間です。slide1、slide2、slide3全てで同じ数字を設定して下さい。*/
+	background: url(../../img/mainpage/header01.jpg) no-repeat center center/cover;	/*１枚目の背景画像の読み込み*/
+}
+
+/*２枚目画像*/
+.home header .slide2 {
+	animation: slide2 15s linear infinite;	/*「15s（※15秒）」というのがスライドショー全体にかける時間です。slide1、slide2、slide3全てで同じ数字を設定して下さい。*/
+	background: url(../../img/mainpage/header02.jpg) no-repeat center center/cover;	/*２枚目の背景画像の読み込み*/
+}
+
+/*３枚目画像*/
+.home header .slide3 {
+	animation: slide3 15s linear infinite;	/*「15s（※15秒）」というのがスライドショー全体にかける時間です。slide1、slide2、slide3全てで同じ数字を設定して下さい。*/
+	background: url(../../img/mainpage/header03.jpg) no-repeat center center/cover;	/*３枚目の背景画像の読み込み*/
+}

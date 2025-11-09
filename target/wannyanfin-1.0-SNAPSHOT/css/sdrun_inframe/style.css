@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#character-area {
+    position: relative;
+    /*inframe対応させるために、100%に設定*/
+    width: 100%;
+    height: 100%;
+    /* 画面中央配置のための追加 */
+    display: flex; /* Flexboxを有効化 */
+    justify-content: center; /* 水平方向（左右）の中央揃え */
+    align-items: center; /* 垂直方向（上下）の中央揃え */
+}
+
+/* 🐾 新しく追加する動作の境界要素 🐾 */
+#movement-boundary {
+    position: relative; /* ★重要：.pet要素はこの要素を基準に動く */
+    width: 640px;       /* 希望の幅 */
+    height: 480px;      /* 希望の高さ */
+    /* border: 1px dashed gray; /* テスト用に境界線を表示 */
+    overflow: hidden;   /* はみ出しを隠す（ペットの画像が境界外に出ないようにする） */
+}
+
+.pet {
+    /* 画像が自由に動くように絶対位置を設定 */
+    position: absolute; 
+    /* 2.8秒かけて滑らかに位置が変化するように設定 */
+    transition: left 2.8s ease-in-out, top 2.8s ease-in-out; 
+    /* 画像のサイズ調整例 */
+    width: 100px;
+    height: 100px;
+}
+
+/* 犬が多い場合の背景スタイル */
+.dog-bg {
+    background-image: url('../../img/sdrun_inframe/dog_background3.jpg');   
+    /* ★ 修正ポイント 1: 画像の繰り返しを停止 ★ */
+    background-repeat: no-repeat; 
+    
+    /* ★ 修正ポイント 2: 画像を中央に配置（余白ができた場合）★ */
+    background-position: center;
+    
+    /* 画像を全体に収め、トリミングを避ける */
+    background-size: contain;
+}
+
+/* 猫が多い場合の背景スタイル */
+.cat-bg {
+    background-image: url('../../img/sdrun_inframe/cat_background3.jpg');
+    /* ★ 修正ポイント 1: 画像の繰り返しを停止 ★ */
+    background-repeat: no-repeat; 
+    
+    /* ★ 修正ポイント 2: 画像を中央に配置（余白ができた場合）★ */
+    background-position: center;
+    
+    /* 画像を全体に収め、トリミングを避ける */
+    background-size: contain;
+}
+
+/* 同数またはデフォルトの場合 */
+.neutral-bg {
+    background-image: url('../../img/sdrun_inframe/even_background2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* 画面全体を埋める 'cover' に変更 */
+    background-size: contain;
+    /* ★★★ 追加: 以前の黄色の設定を上書きするためのおまじない ★★★ */
+    background-color: white;
+}

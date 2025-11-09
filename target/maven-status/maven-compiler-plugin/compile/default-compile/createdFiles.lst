@@ -1,0 +1,9 @@
+com\mycompany\wannyanfin\sdrun\PetDataServlet.class
+com\mycompany\wannyanfin\model\UserAuthResult.class
+com\mycompany\wannyanfin\JakartaRestConfiguration.class
+com\mycompany\wannyanfin\model\Dogcat.class
+com\mycompany\wannyanfin\dao\DogcatDao.class
+com\mycompany\wannyanfin\dao\UserDao.class
+com\mycompany\wannyanfin\servlet\DogcatServlet.class
+com\mycompany\wannyanfin\servlet\LoginServlet.class
+com\mycompany\wannyanfin\resources\JakartaEE10Resource.class

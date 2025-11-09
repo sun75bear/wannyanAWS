@@ -1,0 +1,91 @@
+/*
+ * gitテスト記入
+ * 変更: 常に画面全体を占有するように設定
+ */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;       /* ビューポート幅いっぱいに広げる */
+    height: 100vh;  /* ビューポート高さいっぱいに広げる */
+    overflow: hidden;   /* スクロールバーを非表示にする */
+    /* background-image は .dog-bg/.cat-bg で設定される */
+}
+
+#character-area {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    /* ★★★ 追加: ８０％にした#movement-boundary を中央配置するために Flexbox を有効化 ★★★ */
+    display: flex; 
+    justify-content: center; /* 水平中央 */
+    align-items: center;     /* 垂直中央 */
+}
+
+/* 🐾 #movement-boundary を移動範囲として画面の８割を指定、中央配置するためにcharacter-areaで追加指定 🐾 */
+#movement-boundary {
+    position: relative; 
+    width: 50vw;       
+    height: 60vh;      /* 画面高の８割 */
+     border: 1px dashed gray; 
+    overflow: hidden;
+}
+
+#back-to-top {
+    /* リンクを画面上の特定の位置に固定 */
+    position: absolute; 
+    
+    /* 配置基準は親要素 #character-area の右下 */
+    right: 20px;  /* 右端から20px離す */
+    bottom: 20px; /* 下端から20px離す */
+    
+    /* 視認性のためのスタイル */
+    background-color: #007bff; /* 青色背景 */
+    color: white;              /* 白色文字 */
+    padding: 10px 15px;        /* パディング */
+    text-decoration: none;     /* 下線を削除 */
+    border-radius: 5px;        /* 角を丸くする */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 影 */
+    z-index: 1000;             /* 他の要素（ペットなど）の上に表示 */
+    
+    /* フォントサイズの調整など */
+    font-size: 16px; 
+    font-weight: bold;
+}
+
+#back-to-top:hover {
+    background-color: #0056b3; /* ホバー時の色変更 */
+}
+
+.pet {
+    position: absolute;
+    transition: left 2.8s ease-in-out, top 2.8s ease-in-out; 
+    width: 75px; /* JSのPET_SIZEと合わせる */
+    height: 75px; /* JSのPET_SIZEと合わせる */
+}
+
+/* 犬が多い場合の背景スタイル */
+#character-area.dog-bg {
+    background-image: url('../../img/sdrun_all/dog_background3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* 画面全体を埋める 'cover' に変更 */
+    background-size: contain;
+}
+
+/* 猫が多い場合の背景スタイル */
+#character-area.cat-bg {
+    background-image: url('../../img/sdrun_all/cat_background3.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* 画面全体を埋める 'cover' に変更 */
+    background-size: contain;
+}
+
+/* 同数またはデフォルトの場合 */
+#character-area.neutral-bg {
+    background-image: url('../../img/sdrun_all/even_background2.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    /* 画面全体を埋める 'cover' に変更 */
+    background-size: contain;
+}
